@@ -7,8 +7,9 @@ You can only use any programming language once.
 ## Solutions
 
 
-* [Sonar Sweep](01/sonar_sweep.sh) and part two, the [Sliding Window](01/sliding_window.sh).
+* [Sonar Sweep](01/sonar_sweep.sh) (Bash) and part two, the [Sliding Window](01/sliding_window.sh).
   Run `./sliding_window.sh < input.txt | ./sonar_sweep.sh` to get the final answer.
+* [Dive](02/dive.awk) (Awk) `./dive.awk < input.txt` (part one is in an earlier commit.)
 
 ## PL's I'm comfortable enough working with on day 1
 
@@ -26,7 +27,7 @@ You can only use any programming language once.
 
 ## PL's I've used before, but it's been somewhere between a while and forever
 
-* Awk
+* ~~Awk~~
 * BASIC
 * C#
 * Clojure

@@ -1,6 +1,7 @@
 #!/usr/bin/awk -f
 
 BEGIN {
+    aim = 0
     vertical = 0
     horizontal = 0
 }
@@ -8,10 +9,11 @@ BEGIN {
 {
     if ($1 == "forward") {
         horizontal += $2;
+        vertical += (aim * $2)
     } else if ($1 == "down") {
-        vertical += $2;
+        aim += $2
     } else if ($1 == "up") {
-        vertical -= $2;
+        aim -= $2
     }
 }
 
