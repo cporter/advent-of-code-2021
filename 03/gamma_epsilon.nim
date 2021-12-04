@@ -4,15 +4,25 @@ const
 var 
     poscount = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+proc toBits(xs: seq[int]): seq[int] =
+    var output = newSeq[int]()
+    for x in xs:
+        if x > 0:
+            output.add(1)
+        else: 
+            output.add(0)
+    return output
+
 proc toNumber(x: seq[int], invert : bool): int =
+    var y = toBits(x)
     var result = 0
-    for i in low(x)..high(x):
+    for i in toBits(x):
         result = 2 * result
         if invert:
-            if x[i] <= 0:
+            if i == 0:
                 result += 1
         else:
-            if x[i] > 0:
+            if i == 1:
                 result += 1
     return result
 
