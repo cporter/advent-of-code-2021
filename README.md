@@ -14,6 +14,7 @@ You can only use any programming language once.
   `nim -c -r $sourcefile.nim < input.txt` to run them. First time with Nim. Took a bit
   to get anything done, but the language compiles stupid quickly and it seems like it 
   might really be worth exploring. I'm sure I've done everything incorrect in an ideomatic sense.
+* [Bingo](04/bingo.rkt) I was tired after a day of yard work, so I went with something that's at least a little familiar. (Though it's been some time since I've done anything with scheme, thus the ugly.)  
 
 ## PL's I'm comfortable enough working with on day 1
 
@@ -45,7 +46,7 @@ You can only use any programming language once.
 * Pascal
 * Redcode *(If this is even possible...)*
 * Scala
-* Scheme
+* ~~Scheme~~ (By way of Racket)
 
 ## PL's entirely new to me
 
