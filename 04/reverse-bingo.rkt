@@ -41,7 +41,7 @@
     (list 
         (range 0 5 1) (range 5 5 1) (range 10 5 1) (range 15 5 1) (range 20 5 1)
         (range 0 5 5) (range 1 5 5) (range 2 5 5)  (range 3 5 5)  (range 4 5 5)
-        ;; (range 0 5 6) (range 20 5 -4)
+        ; (range 0 5 6) (range 20 5 -4)
         ))
 
 (define any (lambda (lst)
@@ -53,10 +53,19 @@
     (let ([winner (lambda (win)
             (all (map (lambda (idx) (cdr (nth idx board))) win)))])
         (any (map winner wins)))))
+(define board-loses (lambda (board) (not (board-wins board))))
+
+(define unmarked (lambda (board)
+    (filter (lambda (elt) (not (cdr elt))) board)))
 
 (define score-board (lambda (board)
-    (foldl + 0 
-        (map car (filter (lambda (elt) (not (cdr elt))) board)))))
+    (foldl + 0 (map car (unmarked board)))))
+
+(define print-board (lambda (b)
+    (for ([i (range 0 25 1)])
+        (if (= 4 (remainder i 5)) 
+            (println (nth i b)) 
+            (print (nth i b))))))
 
 (define find-winner
     (lambda (boards moves)
@@ -65,9 +74,15 @@
                [new-moves (cdr moves)]
                [mark (lambda (board) (mark-board board move))]
                [new-boards (map mark boards)]              
-               [winning-boards (filter board-wins new-boards)])
-               (if (empty? winning-boards)
-                (if (empty? new-moves) '() (find-winner new-boards new-moves))
-                (* move (score-board (car winning-boards)))))))
+               [winning-boards (filter board-wins new-boards)]
+               [non-winning-boards (filter board-loses new-boards)])
+
+               (if (empty? non-winning-boards)
+                (let ([winner (car winning-boards)])
+                    (println move)
+                    (print-board winner)
+                    (println (unmarked winner))
+                    (* move (score-board winner)))
+                (find-winner non-winning-boards new-moves)))))
 (define winner (find-winner all-boards all-moves))
 (println winner)
