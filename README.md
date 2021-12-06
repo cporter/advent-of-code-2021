@@ -16,7 +16,7 @@ You can only use any programming language once.
   might really be worth exploring. I'm sure I've done everything incorrect in an ideomatic sense.
 * [Bingo](04/bingo.rkt) and [Reverse Bingo](04/reverse-bingo.rkt) (Racket). I was tired after a day of yard work, so I went with something that's at least a little familiar. (Though it's been some time since I've done anything with scheme, thus the ugly.)  
 * [Hydrothermal](05/hydrothermal.pp) (Pascal), with the input cleaned up to a more pascal-friendly four numbers instead of be-comma'd pairs with an arrow in between.
-* [Lanternfish](06/lanternfish.f90) (FORTRAN). `make ; ./lanternfish` to run. Need to have `gfortran` installed.
+* [Lanternfish](06/lanternfish.f90) (FORTRAN). `make ; ./lanternfish` to run. Need to have `gfortran` installed. You'll also need to convert the original input -- one line, comma delimited numbers -- to one number/line, and call it `input-fortran.txt`. I'm going to go ahead and say that preprocessing the input to get around 50's sensibilities about text processing isn't cheating.
 
 ## PL's I'm comfortable enough working with on day 1
 
