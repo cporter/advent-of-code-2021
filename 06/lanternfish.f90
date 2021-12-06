@@ -18,23 +18,17 @@ program Lanternfish
    n_fish = INPUT_SIZE
 
    bigloop: do rounds = 1, 80
-      do i = 1, n_fish
-        fish(i) = fish(i) - 1
-      end do
       to_add = 0
       do i = 1, n_fish
-        if (fish(i) == 0) then
-            to_add = to_add + 1
+        fish(i) = fish(i) - 1
+        if (fish(i) < 0) then
+            fish(i) = 6
+            to_add = 1 + to_add
         end if
       end do
       do i = 1, to_add
         n_fish = n_fish + 1
         fish(n_fish) = 8
-      end do
-      do i = 1, n_fish
-        if (fish(i) == 0) then
-            fish(i) = 6
-        end if
       end do
    end do bigloop
 
