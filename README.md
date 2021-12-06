@@ -15,6 +15,7 @@ You can only use any programming language once.
   to get anything done, but the language compiles stupid quickly and it seems like it 
   might really be worth exploring. I'm sure I've done everything incorrect in an ideomatic sense.
 * [Bingo](04/bingo.rkt) and [Reverse Bingo](04/reverse-bingo.rkt). I was tired after a day of yard work, so I went with something that's at least a little familiar. (Though it's been some time since I've done anything with scheme, thus the ugly.)  
+* [Hydrothermal](05/hydrothermal.pp), with the input cleaned up to a more pascal-friendly four numbers instead of be-comma'd pairs with an arrow in between.
 
 ## PL's I'm comfortable enough working with on day 1
 
@@ -43,7 +44,7 @@ You can only use any programming language once.
 * Modula 3
 * Oberon
 * Objective-C
-* Pascal
+* ~~Pascal~~
 * Redcode *(If this is even possible...)*
 * Scala
 * ~~Scheme~~ (By way of Racket)
