@@ -30,7 +30,6 @@ You can only use any programming language once.
 * Perl
 * Python
 * Ruby
-* SQL
 
 ## PL's I've used before, but it's been somewhere between a while and forever
 
@@ -40,13 +39,10 @@ You can only use any programming language once.
 * Clojure
 * Erlang
 * Go
+* Kotlin
 * Lua
-* MIX *(If there's an implementatino of this....)*
-* Modula 3
-* Oberon
 * Objective-C
 * ~~Pascal~~
-* Redcode *(If this is even possible...)*
 * Scala
 * ~~Scheme~~ (By way of Racket)
 
