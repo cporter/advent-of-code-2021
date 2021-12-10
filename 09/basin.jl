@@ -12,36 +12,64 @@ for row in 1:ROWS
     end
 end
 
-total = 0
+basin = []
 
-for row in 0:(ROWS-1)
-    for col in 1:COLS
-        digit = digits[row * COLS + col]
-        low = true
-        if col > 1
-            if digits[row * COLS + col - 1] <= digit
-                low = false
-            end
+function contains(what, lst)
+    ret = false
+    for x in lst
+        if x == what
+            ret = true
         end
-        if col < COLS
-            if digits[row * COLS + col + 1] <= digit
-                low = false
-            end
+    end
+    ret
+end
+
+function candidates(i, previous)
+    out = []
+
+    col = (i - 1) % COLS
+    row = div((i - 1), COLS)
+
+    if col > 0
+        append!(out, i - 1)
+    end
+    if col < (COLS-1)
+        append!(out, i + 1)
+    end
+    if row > 0
+        append!(out, i - COLS)
+    end
+    if row < (ROWS-1)
+        append!(out, i + COLS)
+    end
+    ret = []
+    for x in out
+        if ! contains(x, previous)
+            append!(ret, x)
         end
-        if row > 0
-            if digits[(row-1) * COLS + col] <= digit
-                low = false
-            end
+    end
+    ret
+end
+
+for i = 1:lastindex(digits)
+    digit = digits[i]
+    cands = candidates(i, [])
+    low = true
+    for c in cands
+        if digit >= digits[c]
+            low = false
         end
-        if row < (ROWS-1)
-            if digits[(row+1) * COLS + col] <= digit
-                low = false
-            end
-        end
-        if low
-            global total += 1 + digit
-        end
+    end
+    if low
+        append!(basin, i)
     end
 end
 
-println(total)
+begin
+    total = 0
+    for i in basin
+        global total += digits[i] + 1
+    end
+    println(total)
+end
+
