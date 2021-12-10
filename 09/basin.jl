@@ -15,13 +15,8 @@ end
 basin = []
 
 function contains(what, lst)
-    ret = false
-    for x in lst
-        if x == what
-            ret = true
-        end
-    end
-    ret
+    # @printf("contains %d in %s\n", what, lst)
+    what in Set(lst)
 end
 
 function candidates(i, previous)
@@ -44,7 +39,7 @@ function candidates(i, previous)
     end
     ret = []
     for x in out
-        if ! contains(x, previous)
+        if ! (x in previous)
             append!(ret, x)
         end
     end
@@ -65,11 +60,65 @@ for i = 1:lastindex(digits)
     end
 end
 
-begin
-    total = 0
-    for i in basin
-        global total += digits[i] + 1
-    end
-    println(total)
+total = 0
+for x in basin
+    global total += digits[x] + 1
 end
+println(total)
+
+basin_sizes = []
+additional = []
+basin = Set(basin)
+seen = Set()
+
+lengths = []
+
+for start in basin
+    if start in seen
+        continue
+    end
+    union!(seen, [start])
+    local_seen = Set()
+    local_basin = Set([start])
+    ls = Set()
+    while true
+        new_candidates = []
+        for x in local_basin
+            ls = union(seen, local_basin)
+            for c in candidates(x, union(seen, ls))
+                append!(new_candidates, c)
+            end
+        end
+        found = []
+        for c in new_candidates
+            if digits[c] < 9
+                good = true
+                checked = 0
+                for c2 in candidates(c, union(seen, ls))
+                    checked = 1 + checked
+                    if digits[c] >= digits[c2]
+                        good = false
+                    end
+                end
+                if good && 0 < checked
+                    append!(found, c)
+                end
+            end
+        end
+        if isempty(found)
+            break
+        end
+        union!(local_basin, Set(found))
+    end
+
+    # println(local_basin)
+    # println(length(local_basin))
+    append!(lengths, length(local_basin))
+end
+
+sorted_lengths = sort(lengths)
+# println(sorted_lengths)
+
+println(sorted_lengths[end] * sorted_lengths[end-1] * sorted_lengths[end-2])
+
 
