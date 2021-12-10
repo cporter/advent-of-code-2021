@@ -8,6 +8,9 @@ You can only use any programming language once.
 
 ## Solutions
 
+For any of these I may have beome lazy in documenting how to run, assume it's something like
+
+    $RELEVANT_INTERPRETER $source_file < input.txt
 
 * [Sonar Sweep](01/sonar_sweep.sh) (Bash) and part two, the [Sliding Window](01/sliding_window.sh).
   Run `./sliding_window.sh < input.txt | ./sonar_sweep.sh` to get the final answer.
