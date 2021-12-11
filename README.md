@@ -62,3 +62,4 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * ~~R~~
 * ~~Typescript~~
 * ~~Julia~~
+* ~~Zig~~
