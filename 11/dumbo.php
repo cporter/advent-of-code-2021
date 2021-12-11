@@ -46,7 +46,7 @@ function neighbors($n) {
             array_push($ret, $n - COLS - 1);
         }
         array_push($ret, $n - COLS);
-        if ($col < 9) {
+        if ($col < (COLS-1)) {
             array_push($ret, $n - COLS + 1);
         }
     }
@@ -54,15 +54,15 @@ function neighbors($n) {
         array_push($ret, $n - 1);
     }
     array_push($ret, $n);
-    if ($col < 9) {
+    if ($col < (COLS-1)) {
         array_push($ret, $n + 1);
     }
-    if ($row < 9) {
+    if ($row < (COLS-1)) {
         if ($col > 0) {
             array_push($ret, $n + COLS - 1);
         }
         array_push($ret, $n + COLS);
-        if ($col < 9) {
+        if ($col < (COLS-1)) {
             array_push($ret, $n + COLS + 1);
         }
     }
