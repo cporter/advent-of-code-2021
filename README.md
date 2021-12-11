@@ -25,7 +25,7 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * [Crabs part 1](07/part1.r) and [part 2](07/part2.r) (R). Busy day. No time to learn anything complicated, or use a non-crap solution.
 * [Seven Segment](08/app.ts) (Typescript). What an ugly solution. Typescipt is still a whole bunch of Java\*\*\*\*. Do not like.
 * [Basin](09/basin.jl) (Julia). Just part one works correctly for now. Might come back to this later. I remember a lot of excitement around Julia. Maybe it's more fun in a notebook for more domain-specific work. Anyway, the long litany of learning how to read from `STDIN` in new languages is starting to wear a bit. I think I only need five or six more before I'm back in to familiar territory.
-* [Syntax Scoring](10/syntax_scoring.zig) (Zig).
+* [Syntax Scoring](10/syntax_scoring.zig) (Zig). Zig the language is pretty nice. I'm noticing a common theme about programming language documentation where there's a pretty good focus on the particulars of the API but rarely great holisitic docs. Like there was no "here's how you read lines from stdin" documentation readily available, and I got frustrated enough figuring out how to sort just part of an array that I implemented bubble sort by hand. Which is too bad. (Note: this isn't just a Zig problem. Lots of documentation is lacking.)
 
 ## PL's I'm comfortable enough working with on day 1
 
