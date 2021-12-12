@@ -74,46 +74,30 @@ seen = Set()
 lengths = []
 
 for start in basin
-    if start in seen
-        continue
+    b = Set([start])
+    q = []
+    for c in candidates(start, [])
+        append!(q, c)
     end
-    union!(seen, [start])
-    local_seen = Set()
-    local_basin = Set([start])
-    ls = Set()
-    while true
-        new_candidates = []
-        for x in local_basin
-            ls = union(seen, local_basin)
-            for c in candidates(x, union(seen, ls))
-                append!(new_candidates, c)
-            end
-        end
-        found = []
-        for c in new_candidates
-            if digits[c] < 9
-                good = true
-                checked = 0
-                for c2 in candidates(c, union(seen, ls))
-                    checked = 1 + checked
-                    if digits[c] >= digits[c2]
-                        good = false
-                    end
+    while 0 < length(q)
+        c = popfirst!(q)
+        if digits[c] < 9
+            ns = candidates(c, b)
+            good = true
+            for n in ns
+                if digits[n] < digits[c]
+                    good = false
                 end
-                if good && 0 < checked
-                    append!(found, c)
+            end
+            if good
+                push!(b, c)
+                for n in ns
+                    append!(q, n)
                 end
             end
         end
-        if isempty(found)
-            break
-        end
-        union!(local_basin, Set(found))
     end
-
-    # println(local_basin)
-    # println(length(local_basin))
-    append!(lengths, length(local_basin))
+    append!(lengths, length(b))
 end
 
 sorted_lengths = sort(lengths)
