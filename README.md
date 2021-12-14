@@ -36,12 +36,12 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * [Basin](09/basin.jl) (Julia). Just part one works correctly for now. Might come back to this later. I remember a lot of excitement around Julia. Maybe it's more fun in a notebook for more domain-specific work. Anyway, the long litany of learning how to read from `STDIN` in new languages is starting to wear a bit. I think I only need five or six more before I'm back in to familiar territory.
 * [Syntax Scoring](10/syntax_scoring.zig) (Zig). Zig the language is pretty nice. I'm noticing a common theme about programming language documentation where there's a pretty good focus on the particulars of the API but rarely great holisitic docs. Like there was no "here's how you read lines from stdin" documentation readily available, and I got frustrated enough figuring out how to sort just part of an array that I implemented bubble sort by hand. Which is too bad. (Note: this isn't just a Zig problem. Lots of documentation is lacking.)
 * [Dumbo](11/dumbo.php) (PHP). Had to play a little catchup today, so I went with something that I suspected would be straightforward and have good documentation. I was right about that part. Amazing how much easier that makes picking up a new language, even one with a reputation for being in the style of 90's perl.
-* [Passage](12/passage.c) (C). I spent a good chunk of the last couple of days looking in to a BASIC interpreter that doesn't run in an emulated VIC-20 in a browser. That's going to be a lot of work. Potentially not worth it. So we burn C, hopefully not too early.
+* [Passage](12/passage.c) (C). I spent a good chunk of the last couple of days looking in to a BASIC interpreter that doesn't run in an emulated VIC-20 in a browser. That's going to be a lot of work. Potentially not worth it. So we burn C, hopefully not too early. (`python3 reformat.py < input.txt > input.simple; make; ./passage input.simple`)
 
 ## PL's I'm comfortable enough working with on day 1
 
 * ~~Bash~~
-* C
+* ~~C~~
 * C++ *(Should C and C++ count separately?)*
 * D
 * Haskell
