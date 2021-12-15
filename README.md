@@ -29,6 +29,7 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * [Day 11](https://adventofcode.com/2021/day/11): [Dumbo](11/dumbo.php) (PHP). Had to play a little catchup today, so I went with something that I suspected would be straightforward and have good documentation. I was right about that part. Amazing how much easier that makes picking up a new language, even one with a reputation for being in the style of 90's perl.
 * [Day 12](https://adventofcode.com/2021/day/12) [Passage](12/passage.c) (C). I spent a good chunk of the last couple of days looking in to a BASIC interpreter that doesn't run in an emulated VIC-20 in a browser. That's going to be a lot of work. Potentially not worth it. So we burn C, hopefully not too early. (`python3 reformat.py < input.txt > input.simple; make; ./passage input.simple`)
 * [Day 13](https://adventofcode.com/2021/day/13) [Folding](13/Sources/folding/main.swift) (Swift). You know what? Swift is pretty nice and has good documentation. `swift build; ./build/$ARCH/debug/folding < input.txt`
+* [Day 14](https://adventofcode.com/2021/day/134 [Polymer](14/polymer.r) (Ruby). It's been forever since I've used Ruby. I forgot how nice it is. Anyway, probably need to save the new languages for the weekend. I'm a couple of days behind at this point. Time to play catchup with languages I already know. `ruby polymer.rb $N < input.txt`.
 
 ## PL's I'm comfortable enough working with on day 1
 
