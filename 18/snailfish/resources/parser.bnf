@@ -1,0 +1,2 @@
+expr = '[' (num | expr) ',' (num | expr) ']'
+num = #'[0-9]+'
