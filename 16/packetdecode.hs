@@ -114,12 +114,32 @@ packetVersionValue p = version p + (packetsVersionValue $ subpackets p)
 packetsVersionValue :: [Packet] -> Int
 packetsVersionValue = foldl (\a b -> a + packetVersionValue b) 0
 
+packetValueT :: Packet -> Int -> Int
+packetValueT p 0 = foldl1 (+) $ map packetValue $ subpackets p
+packetValueT p 1 = foldl1 (*) $ map packetValue $ subpackets p
+packetValueT p 2 = foldl1 min $ map packetValue $ subpackets p
+packetValueT p 3 = foldl1 max $ map packetValue $ subpackets p
+packetValueT p 4 = value p
+packetValueT p 5 = let (a:b:rest) = subpackets p
+                   in if (packetValue a) > (packetValue b)
+                      then 1 else 0
+packetValueT p 6 = let (a:b:rest) = subpackets p
+                   in if (packetValue a) < (packetValue b)
+                      then 1 else 0
+packetValueT p 7 = let (a:b:rest) = subpackets p
+                   in if (packetValue a) == (packetValue b)
+                      then 1 else 0
+
+packetValue :: Packet -> Int
+packetValue p = packetValueT p $ typeId p
+
 main :: IO ()
 main = do
   line <- getLine
   let bitstream = fromhex line
       (packet, _) = parsePacket bitstream
-      value = packetVersionValue packet
+      versionValue = packetVersionValue packet
     in
     do
-      putStrLn $ "packet version value: " ++ (show value)
+      putStrLn $ "part 1: " ++ (show versionValue)
+      putStrLn $ "part 2: " ++ (show $ packetValue packet)

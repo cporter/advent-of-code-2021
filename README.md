@@ -31,6 +31,7 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * [Day 13](https://adventofcode.com/2021/day/13) [Folding](13/Sources/folding/main.swift) (Swift). You know what? Swift is pretty nice and has good documentation. `swift build; ./build/$ARCH/debug/folding < input.txt`
 * [Day 14](https://adventofcode.com/2021/day/14) [Polymer](14/polymer.rb) (Ruby). It's been forever since I've used Ruby. I forgot how nice it is. Anyway, probably need to save the new languages for the weekend. I'm a couple of days behind at this point. Time to play catchup with languages I already know. `ruby polymer.rb $N < input.txt`.
 * [Day 15](https://adventofcode.com/2021/day/15) [Chiton](15/src/main.rs) (Rust). So I've been laboring under the assumption that all calendars, advent or otherwise, have a number of days in them equal to the number of months. This is incorrect. So I budgeted six more wacky fringe languages than I needed. Enough! Moving on to the one language that I really wanted to learn at the outset of this whole thing. I have to say, Rust's documentation is excellent. The language is a nice mix of things I know from C++, Haskell and other places, and the compiler is *crazy* helpful. Will definitely look in to this for future projects. `cargo run < input.txt` for part 1. I cheated a little for part two: `python3 expando.py < input.txt | cargo run` for part 2.
+* [Day 16](https://adventofcode.com/2021/day/16) [Packet Decoder](16/packetdecode.hs) (Haskell) `make && ./pd < input.txt`
 
 ## PL's I'm comfortable enough working with on day 1
 
@@ -38,7 +39,7 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * ~~C~~
 * C++ *(Should C and C++ count separately?)*
 * D
-* Haskell
+* ~~Haskell~~
 * Java
 * Java\*\*\*\*\*\*
 * Perl
