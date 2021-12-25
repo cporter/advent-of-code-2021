@@ -37,28 +37,25 @@ sub x_extents {
     for (my $i = 0;; $i++) {
 	if (xpos($i) >= $x0 && ($xmin == -1)) {
 	    $xmin = $i;
-	}
-	if (xpos($i) <= $x1 && ($xmin != -1)) {
-	    $xmax = $i;
-	}
-	if (xpos($i) > $x1) {
 	    last;
 	}
     }
-    return ($xmin, $xmax);
+    return ($xmin, $x1);
 }
 
 my ($xmin, $xmax) = x_extents();
 
-my ($highest, $velocity) = (0, -1, -1);
+my ($total, $highest, $velocity) = (0, -1, -1);
 
-for (my $_yv = -$y0; $_yv > 0; $_yv--) {
-
+for (my $_yv = -$y0; $_yv >= $y0; $_yv--) {
     for (my $_xv = $xmin; $_xv <= $xmax; $_xv++) {
 	my ($xv, $yv) = ($_xv, $_yv);
 	my ($x, $y) = (0, 0);
 	my $max_y = $y;
-	while (! past($x, $y)) {
+	for (;;) {
+	    if (past($x, $y)) {
+		last;
+	    }
 	    if ($y > $max_y) {
 		$max_y = $y;
 	    }
@@ -67,6 +64,7 @@ for (my $_yv = -$y0; $_yv > 0; $_yv--) {
 		    $highest = $max_y;
 		    $velocity = [$_xv, $_yv];
 		}
+		$total++;
 		last;
 	    }
 	    $x += $xv;
@@ -77,4 +75,4 @@ for (my $_yv = -$y0; $_yv > 0; $_yv--) {
     }
 }
 
-print "highest: $highest\n";
+print "highest: $highest\ttotal: $total\n";
