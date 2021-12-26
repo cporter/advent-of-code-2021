@@ -33,6 +33,7 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * [Day 15](https://adventofcode.com/2021/day/15) [Chiton](15/src/main.rs) (Rust). So I've been laboring under the assumption that all calendars, advent or otherwise, have a number of days in them equal to the number of months. This is incorrect. So I budgeted six more wacky fringe languages than I needed. Enough! Moving on to the one language that I really wanted to learn at the outset of this whole thing. I have to say, Rust's documentation is excellent. The language is a nice mix of things I know from C++, Haskell and other places, and the compiler is *crazy* helpful. Will definitely look in to this for future projects. `cargo run < input.txt` for part 1. I cheated a little for part two: `python3 expando.py < input.txt | cargo run` for part 2.
 * [Day 16](https://adventofcode.com/2021/day/16) [Packet Decoder](16/packetdecode.hs) (Haskell). `make && ./pd < input.txt`
 * [Day 17](https://adventofcode.com/2021/day/17) [Trickshot](17/trickshot.pl) (Perl). This is one of those problems where I strongly suspect that there's a purely analytic solution, but the problem space is so small that might as well brute force it. So an uninspiring language for an uninspiring solution. `./trickshot.pl input.txt`
+* [Day 18](https://adventofcode.com/2021/day/18) [Snailfish](18/snailfish/src/snailfish/core.clj) (Clojure) I don't know why, but this one knocked me out. I had to cheat and get hints from [somebody else's implementation](https://github.com/mgrzeszczak/aoc-clojure/blob/master/src/aoc_clojure/2021/day18.clj). For whatever reason, I spent hours beating my head against doing the dumb thing with lists instead of proper trees. Oh well. (Part 2 I kluged through all on my lonesome.) What this reminds me about Clojure is that I am not smart enough to work even mildly copmlex problems in dynamically-typed languages.
 
 ## PL's I'm comfortable enough working with on day 1
 
@@ -52,7 +53,7 @@ For any of these I may have beome lazy in documenting how to run, assume it's so
 * ~~Awk~~
 * BASIC
 * C#
-* Clojure
+* ~~Clojure~~
 * Erlang
 * Go
 * Kotlin
